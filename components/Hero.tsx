@@ -57,7 +57,7 @@ export default function Hero() {
       {/* Background Image with effects */}
       <div className="hero-bg absolute inset-0 z-0 opacity-40">
          <img 
-           src="/public/image/hero_bg.jpg" 
+           src="/image/hero_bg.jpg" 
            alt="Hero background"
            className="w-full h-full object-cover grayscale contrast-125 scale-105"
          />
