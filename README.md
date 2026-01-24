@@ -1,20 +1,70 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Abhay Mallick - Portfolio
 
-# Run and deploy your AI Studio app
+A modern, animated portfolio website built with React, TypeScript, and GSAP animations featuring smooth scrolling and custom cursor interactions.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ZKEFvQEfXcYqmxkJlrLZBEoF1EHrtw9R
+- Smooth scrolling with Lenis
+- GSAP animations with ScrollTrigger
+- Custom cursor interactions
+- Responsive design with Tailwind CSS
+- Multiple sections: Hero, Work Gallery, Process, Manifesto, Team, Services
+- Modern typography with Manrope, Syne, and Playfair Display fonts
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- React 19
+- TypeScript
+- Vite
+- GSAP (GreenSock Animation Platform)
+- Lenis (Smooth Scrolling)
+- Tailwind CSS
+- Lucide React (Icons)
 
+## Getting Started
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+4. Preview production build:
+   ```bash
+   npm run preview
+   ```
+
+## Project Structure
+
+```
+├── components/          # React components
+│   ├── CustomCursor.tsx
+│   ├── Footer.tsx
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── Intro.tsx
+│   ├── Manifesto.tsx
+│   ├── Marquee.tsx
+│   ├── Process.tsx
+│   ├── Services.tsx
+│   ├── Team.tsx
+│   └── WorkGallery.tsx
+├── public/             # Static assets
+├── App.tsx             # Main application component
+├── index.tsx           # Application entry point
+├── styles.css          # Global styles
+└── vite.config.ts      # Vite configuration
+```
+
+## License
+
+Private project
