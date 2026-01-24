@@ -33,8 +33,8 @@ export default function Hero() {
         delay: 1
       });
 
-      // Parallax Video
-      gsap.to(".hero-video", {
+      // Parallax Background Image
+      gsap.to(".hero-bg", {
         yPercent: 30,
         scale: 1.1,
         scrollTrigger: {
@@ -54,17 +54,13 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#e1e1e1]">
-      {/* Background Video with heavy grain */}
-      <div className="hero-video absolute inset-0 z-0 opacity-40">
-         <video 
-           autoPlay 
-           muted 
-           loop 
-           playsInline
+      {/* Background Image with effects */}
+      <div className="hero-bg absolute inset-0 z-0 opacity-40">
+         <img 
+           src="/public/image/hero_bg.jpg" 
+           alt="Hero background"
            className="w-full h-full object-cover grayscale contrast-125 scale-105"
-         >
-           <source src="https://cdn.coverr.co/videos/coverr-flowing-ink-2479/1080p.mp4" type="video/mp4" />
-         </video>
+         />
          <div className="absolute inset-0 bg-[#050505]/50 mix-blend-multiply"></div>
          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
       </div>
