@@ -99,7 +99,7 @@ export default function Header({ onNavigate, currentView = 'home' }: HeaderProps
           className="text-lg sm:text-xl md:text-2xl font-bold font-[Syne] tracking-tight uppercase relative z-50 cursor-pointer"
         >
           <span className="sm:hidden">SE</span>
-          <img src="/logo.svg" alt="Logo" className="h-8 w-auto hidden sm:block" />
+          <span className="hidden sm:inline">Shashwat Ekka</span>
         </a>
 
         <nav className="hidden md:block">
