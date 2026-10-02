@@ -1,70 +1,69 @@
-# Abhay Mallick - Portfolio
+# Stormfolio - Samir's Portfolio
 
-A modern, animated portfolio website built with React, TypeScript, and GSAP animations featuring smooth scrolling and custom cursor interactions.
+A high-end, neo-brutalist animated portfolio website built with React, TypeScript, and GSAP. This project emphasizes bold typography, smooth motion, and interactive elements to create a unique digital presence.
 
-## Features
+## 🚀 Features
 
-- Smooth scrolling with Lenis
-- GSAP animations with ScrollTrigger
-- Custom cursor interactions
-- Responsive design with Tailwind CSS
-- Multiple sections: Hero, Work Gallery, Process, Manifesto, Team, Services
-- Modern typography with Manrope, Syne, and Playfair Display fonts
+- **Smooth Scrolling**: Powered by Lenis for a cinematic browsing experience.
+- **Advanced Animations**: GSAP and ScrollTrigger for high-performance, scroll-synced interactions.
+- **Interactive Elements**: 
+  - Custom cursor interactions and laser-cursor effects.
+  - Integrated Oneko cat animation system.
+  - Dynamic video modals and a dedicated showreel.
+- **Neo-Brutalist Design**: Bold layout, sharp borders, and high-contrast typography using Manrope, Syne, and Playfair Display.
+- **Responsive & Optimized**: Fully responsive layout built with Tailwind CSS.
 
-## Tech Stack
+## 🛠 Tech Stack
 
-- React 19
-- TypeScript
-- Vite
-- GSAP (GreenSock Animation Platform)
-- Lenis (Smooth Scrolling)
-- Tailwind CSS
-- Lucide React (Icons)
+- **Core**: React 19, TypeScript, Vite
+- **Animation**: GSAP (GreenSock), Lenis
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Deployment**: Netlify
 
-## Getting Started
+## 📂 Project Structure
 
-1. Install dependencies:
+```
+├── components/          # UI Components
+│   ├── ui/              # Low-level design primitives
+│   ├── About.tsx        # About section
+│   ├── CatLayer.tsx     # Oneko animation layer
+│   ├── Hero.tsx         # Landing section
+│   ├── WorkGallery.tsx   # Portfolio showcase
+│   └── ...              # Other interactive components
+├── data/                # Project metadata and content
+├── docs/                # Documentation (e.g., Oneko skins)
+├── hooks/               # Custom React hooks for animations
+├── lib/                 # Core logic and Oneko animation engine
+├── public/              # Static assets
+├── worksvids/           # High-quality project videos and thumbnails
+├── App.tsx              # Main application component
+├── index.html           # HTML entry point
+└── styles.css           # Global styles and Tailwind imports
+```
+
+## 🏁 Getting Started
+
+1. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. Run the development server:
+2. **Run the development server**:
    ```bash
    npm run dev
    ```
 
-3. Build for production:
+3. **Build for production**:
    ```bash
    npm run build
    ```
 
-4. Preview production build:
+4. **Preview production build**:
    ```bash
    npm run preview
    ```
 
-## Project Structure
+## 📜 License
 
-```
-├── components/          # React components
-│   ├── CustomCursor.tsx
-│   ├── Footer.tsx
-│   ├── Header.tsx
-│   ├── Hero.tsx
-│   ├── Intro.tsx
-│   ├── Manifesto.tsx
-│   ├── Marquee.tsx
-│   ├── Process.tsx
-│   ├── Services.tsx
-│   ├── Team.tsx
-│   └── WorkGallery.tsx
-├── public/             # Static assets
-├── App.tsx             # Main application component
-├── index.tsx           # Application entry point
-├── styles.css          # Global styles
-└── vite.config.ts      # Vite configuration
-```
-
-## License
-
-Private project
+Private project.
