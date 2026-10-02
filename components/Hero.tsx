@@ -174,7 +174,7 @@ export default function Hero({ ready = true }: HeroProps) {
         </div>
 
         <div className="hero-content relative mb-4 sm:mb-8 md:mb-12 mt-auto">
-          <h1 className="text-[12vw] sm:text-[9vw] md:text-[5.5vw] lg:text-[5.4vw] leading-[0.88] font-heading font-black tracking-tight text-white">
+          <h1 className="text-6xl sm:text-7xl md:text-5xl lg:text-[5.4vw] leading-[0.88] font-heading font-black tracking-tight text-white">
             <div className="flex flex-col sm:flex-row sm:flex-nowrap items-start sm:items-baseline gap-1 sm:gap-[1.5vw] md:gap-[2vw]">
               <span className="inline-flex">
                 {firstName.split("").map((char, i) => (

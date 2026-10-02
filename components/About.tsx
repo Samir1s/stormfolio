@@ -252,12 +252,12 @@ export default function About() {
             ═══════════════════════════════════════ */}
         <div className="about-giant-title mb-6 md:mb-10" style={{ perspective: "600px" }}>
           <div className="overflow-hidden">
-            <span className="block text-5xl sm:text-7xl md:text-[10vw] lg:text-[8vw] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter text-white" style={{ willChange: "transform" }}>
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[8vw] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter text-white" style={{ willChange: "transform" }}>
               About
             </span>
           </div>
           <div className="overflow-hidden">
-            <span className="block text-5xl sm:text-7xl md:text-[10vw] lg:text-[8vw] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter stroke-text text-transparent" style={{ willChange: "transform" }}>
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[8vw] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter stroke-text text-transparent" style={{ willChange: "transform" }}>
               Shashwat
             </span>
           </div>

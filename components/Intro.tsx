@@ -104,7 +104,7 @@ export default function Intro() {
     <section ref={sectionRef} className="py-16 sm:py-28 md:py-48 bg-[#0a0a0a] text-[#f4f4f4] overflow-hidden px-4 sm:px-6">
       <div className="container mx-auto">
         
-        <div className="flex flex-col text-4xl sm:text-6xl md:text-[6vw] leading-[1.1] font-heading uppercase font-bold tracking-tight will-change-transform">
+        <div className="flex flex-col text-3xl sm:text-5xl md:text-4xl leading-[1.1] font-heading uppercase font-bold tracking-tight will-change-transform">
           
           <div ref={line1Ref} className="intro-line-wrap overflow-hidden flex flex-wrap items-baseline gap-2 sm:gap-4 will-change-transform">
              <span className="char">I</span>
