@@ -16,15 +16,10 @@ const CATEGORIES = ['All', 'Visual / VFX', 'Motion Graphics', 'Cinematic', 'AI W
 const DRIVE_FOLDER_URL = "https://drive.google.com/drive/folders/1mrSNC6kNDEKEv6nl4XgtwJHHsjIk4oJV";
 
 export default function WorksPage({ onBack }: WorksPageProps) {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const pageRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-
-  const filteredProjects = activeCategory === 'All' 
-    ? PROJECTS 
-    : PROJECTS.filter(p => p.category === activeCategory);
 
   // Page entrance animation
   useEffect(() => {
@@ -81,17 +76,17 @@ export default function WorksPage({ onBack }: WorksPageProps) {
     return () => ctx.revert();
   }, []);
 
-  // Grid card entrance animations — re-trigger on filter change
+  // Grid card entrance animations
   useEffect(() => {
     if (!gridRef.current) return;
 
     const ctx = gsap.context(() => {
       const cards = gridRef.current!.querySelectorAll('.works-card-wrapper');
 
-      gsap.fromTo(cards, 
-        { 
-          y: 60, 
-          opacity: 0, 
+      gsap.fromTo(cards,
+        {
+          y: 60,
+          opacity: 0,
           scale: 0.92,
           rotateX: 8,
         },
@@ -109,7 +104,7 @@ export default function WorksPage({ onBack }: WorksPageProps) {
     }, gridRef);
 
     return () => ctx.revert();
-  }, [activeCategory]);
+  }, []);
 
   // Scroll-triggered CTA banner
   useEffect(() => {
@@ -176,57 +171,29 @@ export default function WorksPage({ onBack }: WorksPageProps) {
           </p>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 md:gap-3 mb-8 sm:mb-12">
-          {CATEGORIES.map((cat) => {
-            const count = cat === 'All' 
-              ? PROJECTS.length 
-              : PROJECTS.filter(p => p.category === cat).length;
-            const isActive = activeCategory === cat;
-
+        {/* Grouped by Category */}
+        <div ref={gridRef}>
+          {CATEGORIES.filter(c => c !== 'All').map(cat => {
+            const catProjects = PROJECTS.filter(p => p.category === cat);
+            if (catProjects.length === 0) return null;
             return (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`works-filter-pill category-pill px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
-                  isActive 
-                    ? 'bg-white text-black font-bold shadow-[0_0_20px_rgba(255,255,255,0.2)]' 
-                    : 'border border-white/15 text-gray-400 hover:text-white hover:border-white/40'
-                }`}
-              >
-                <span>{cat}</span>
-                <span className={`text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-full ${isActive ? 'bg-black/20 text-black font-semibold' : 'bg-white/10 text-gray-400'}`}>
-                  {count}
-                </span>
-              </button>
+              <section key={cat} className="mb-16 sm:mb-24">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white mb-6 sm:mb-8 uppercase tracking-tight border-b border-white/10 pb-3">
+                  {cat}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10" style={{ perspective: '1200px' }}>
+                  {catProjects.map(project => (
+                    <div key={project.id} className="works-card-wrapper" style={{ transformOrigin: 'center bottom' }}>
+                      <VideoCard project={project} onSelect={setSelectedProject} aspect="aspect-[16/10]" />
+                    </div>
+                  ))}
+                </div>
+              </section>
             );
           })}
         </div>
 
-        {/* Video Grid - 1 col on mobile, 2 cols on tablet, 3 cols on desktop */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10" style={{ perspective: '1200px' }}>
-          {filteredProjects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className="works-card-wrapper"
-              style={{ transformOrigin: 'center bottom' }}
-            >
-              <VideoCard 
-                project={project} 
-                onSelect={setSelectedProject}
-                aspect="aspect-[16/10]"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Empty state fallback if none match */}
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-24 border border-dashed border-white/10 rounded-2xl animate-fadeInUp">
-            <p className="text-gray-500 font-mono text-sm uppercase">No works found in this category.</p>
-          </div>
-        )}
-
+        
         {/* Bottom Banner CTA */}
         <div className="works-cta-banner mt-16 sm:mt-24 p-6 sm:p-8 md:p-12 border border-white/15 rounded-2xl bg-gradient-to-br from-[#0e0e0e] via-[#050505] to-[#121212] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden">
           {/* Ambient shimmer */}
@@ -253,7 +220,7 @@ export default function WorksPage({ onBack }: WorksPageProps) {
       {/* Video Modal Player */}
       <VideoModal
         project={selectedProject}
-        projects={filteredProjects}
+        projects={PROJECTS}
         onClose={() => setSelectedProject(null)}
         onSelectProject={setSelectedProject}
       />

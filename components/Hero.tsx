@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { WaveGridBackground } from '@/components/ui/wave-grid-background';
 import { AsciiGlitchRipple } from '@/components/ui/ascii-glitch-ripple';
+import { Instagram, Send } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,16 +137,16 @@ export default function Hero({ ready = true }: HeroProps) {
             </div>
             <div className="flex gap-2 mt-1">
               <a href="https://www.instagram.com/stromz.ae?stkn=MWo0dmx2Nnh2YzNvaA==" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors text-xs" title="Instagram">
-                IG
+                <Instagram className="w-4 h-4" />
               </a>
               <a href="https://discordapp.com/users/976513344355852328" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors text-xs" title="Discord">
-                DC
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.svg" alt="Discord" className="w-4 h-4 object-contain" />
               </a>
               <a href="https://t.me/Shashwat989" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors text-xs" title="Telegram">
-                TG
+                <Send className="w-4 h-4" />
               </a>
               <a href="https://wa.me/917762945392" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-green-500 hover:border-green-500 hover:text-black transition-colors text-xs" title="WhatsApp">
-                WA
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/whatsapp-white-icon.svg" alt="WhatsApp" className="w-4 h-4 object-contain" />
               </a>
             </div>
           </div>

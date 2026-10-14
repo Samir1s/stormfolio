@@ -119,7 +119,7 @@ ul {
   background-color: white;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 999999;
   mix-blend-mode: exclusion;
   transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), height 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   /* GSAP handles transform, but we set initial state just in case */
@@ -127,10 +127,16 @@ ul {
 }
 
 .custom-cursor.hovered {
-  width: 80px;
-  height: 80px;
+  width: 28px;
+  height: 28px;
   background-color: white;
   mix-blend-mode: exclusion;
+}
+
+.custom-cursor .social-icon {
+  filter: invert(1) !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 ::-webkit-scrollbar {
@@ -384,4 +390,119 @@ ul {
 .scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════
+   MOBILE RESPONSIVE FIXES
+   ═══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 8vh 0 !important;
+  }
+  .container {
+    padding: 0 4vw;
+  }
+  /* Stats column: single column on mobile */
+  .about-stats-row.sm\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  /* Skill row spacing */
+  .about-skill-row .flex {
+    gap: 0.25rem !important;
+  }
+  /* Smaller giant title */
+  .about-giant-title span {
+    font-size: 3rem !important;
+  }
+  /* CTA button full-width on mobile */
+  .about-cta-btn {
+    display: inline-flex !important;
+    width: auto !important;
+  }
+  /* Marquee text reduced */
+  .tool-marquee-track span {
+    font-size: 0.875rem !important;
+  }
+  /* Header mobile nav */
+  .header-nav {
+    padding: 1rem !important;
+  }
+  /* Video cards stacked */
+  .video-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Modal responsive */
+  .modal-content {
+    max-width: 95vw !important;
+    margin: 1rem !important;
+  }
+  /* Hero section */
+  .hero-title {
+    font-size: 4rem !important;
+  }
+  /* SHASHWAT EKKA heading mobile override */
+  .hero-content h1 {
+    font-size: 2.5rem !important;
+  }
+  .hero-content h1 .hero-char {
+    display: inline-block;
+  }
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+}
+
+/* Touch device: disable cursor */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Small mobile: < 480px */
+@media (max-width: 480px) {
+  .about-giant-title span {
+    font-size: 2.5rem !important;
+  }
+  .stat-box {
+    padding: 1rem !important;
+  }
+  .stat-box span.text-4xl {
+    font-size: 2.5rem !important;
+  }
+  .skill-bar-fill {
+    height: 3px !important;
+  }
+  .tool-marquee-track span {
+    font-size: 0.75rem !important;
+  }
+  .about-cta-btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.625rem !important;
+  }
+  /* SHASHWAT EKKA hero heading */
+  .hero-content h1 {
+    font-size: 2rem !important;
+  }
+  .hero-content h1 .hero-char {
+    display: inline-block;
+  }
+  /* Selected Works heading */
+  .works-heading-word {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .section-padding {
+    padding: 6vh 0 !important;
+  }
+  .hero-section {
+    min-height: auto !important;
+    padding: 4vh 0 !important;
+  }
 }

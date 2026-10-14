@@ -145,9 +145,9 @@ export default function VideoModal({ project, projects, onClose, onSelectProject
   if (!project) return null;
 
   return (
-    <div 
+    <div
       ref={backdropRef}
-      className="fixed inset-0 z-[100000] bg-black/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 md:p-10"
+      className="fixed inset-0 z-[100000] bg-black/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 md:p-10 cursor-auto"
       onClick={handleClose}
     >
       {/* Modal Dialog Card */}

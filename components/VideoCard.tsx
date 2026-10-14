@@ -127,6 +127,17 @@ export default function VideoCard({ project, onSelect, aspect = "aspect-[16/10]"
           }}
         ></div>
 
+        {/* Play Placeholder / Fallback Image */}
+        {!project.video && (
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0d0d0d] via-[#121212] to-[#0a0a0a]">
+            <div className="text-center">
+              <Play className="w-12 h-12 text-white/20 mx-auto mb-3" />
+              <span className="text-xs font-mono text-white/30 uppercase tracking-[0.2em]">Preview Unavailable</span>
+              <span className="block text-[10px] font-mono text-white/20 mt-1">{project.title}</span>
+            </div>
+          </div>
+        )}
+
         {/* Center Play Icon Trigger */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div 

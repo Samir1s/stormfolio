@@ -12,6 +12,17 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: 'claude-motion',
+    title: 'Claude Motion Identity',
+    category: 'Motion Graphics',
+    video: '/worksvids/Motion graphic/Claude mo.mp4',
+    thumbnail: '/worksvids/Motion graphic/thumbClaude mo.png',
+    year: '2024',
+    tools: 'After Effects • Illustrator • Motion Design',
+    description: 'Minimalist kinetic brand identity animation showcasing brand typography, geometric transformations, and fluid ease.',
+    featured: true,
+  },
+  {
     id: 'lv-sandals',
     title: 'LV Sandals SFX & Commercial',
     category: 'Visual / VFX',
@@ -76,16 +87,6 @@ export const PROJECTS: Project[] = [
     tools: 'After Effects • Twixtor • Flow • Sapphire',
     description: 'Precision beat-synced anime music video with seamless frame blends, velocity curves, and customized transition design.',
     featured: true,
-  },
-  {
-    id: 'claude-motion',
-    title: 'Claude Motion Identity',
-    category: 'Motion Graphics',
-    video: '/worksvids/Motion graphic/Claude mo.mp4',
-    thumbnail: '/worksvids/Motion graphic/thumbClaude mo.png',
-    year: '2024',
-    tools: 'After Effects • Illustrator • Motion Design',
-    description: 'Minimalist kinetic brand identity animation showcasing brand typography, geometric transformations, and fluid ease.',
   },
   {
     id: 'ugc-perf',

@@ -65,10 +65,11 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <div 
-      ref={cursorRef} 
-      className="custom-cursor hidden md:block" 
-      aria-hidden="true" 
+    <div
+      ref={cursorRef}
+      className="custom-cursor hidden md:block"
+      aria-hidden="true"
+      style={{ zIndex: 999999 }}
     />
   );
 }

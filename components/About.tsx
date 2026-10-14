@@ -277,6 +277,20 @@ export default function About() {
 
           {/* Bio Column (spans 7) */}
           <div className="about-photo-wrap about-bio-section lg:col-span-7 will-change-transform">
+            {/* Storm image — black & white filter + hover glow */}
+            <div
+              data-storm-img
+              className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 sm:mb-8 border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-colors duration-500 group hover:border-white/30"
+            >
+              <img
+                src="/image/storm-2.jpeg"
+                alt="Storm 2"
+                className="w-full h-full object-cover grayscale contrast-125 brightness-90 transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.03]"
+              />
+              {/* Subtle inner glow overlay on hover — opacity only, GPU-cheap */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            </div>
+
             <div className="mb-6 sm:mb-8">
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/30 border-b border-white/10 pb-2 inline-block">
                 [ 001 — WHO I AM ]
